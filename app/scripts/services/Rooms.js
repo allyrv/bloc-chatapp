@@ -1,13 +1,18 @@
 (function() {
   function Room($firebaseArray) {
-    var Room = {};
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
+    var roomService = {};
 
-    Room.all = rooms;
 
-    return Room;
+    roomService.all = rooms;
+    roomService.addRoom = function (roomTitle) {
+      rooms.$add({name: roomTitle});
+    };
+
+    return roomService;
   }
+
 
   angular
     .module('blocChatapp')

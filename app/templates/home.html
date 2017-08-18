@@ -2,10 +2,11 @@
   <div class = "left">
     <section>
       <h1 class="title">Bloc Chat</h1>
+      <span class="new-room-button" type="button" ng-click="home.addRoom()">New Room</span>
     </section>
     <ul class="nav">
-      <li class="room-name" ng-repeat="room in home.rooms">
-        {{ room.name }}
+      <li class="room-name" ng-repeat="x in home.roomObject.all">
+         <h4>{{x.name}}</h4>
       </li>
     </ul>
   </div>
