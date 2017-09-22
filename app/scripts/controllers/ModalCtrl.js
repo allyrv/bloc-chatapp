@@ -1,24 +1,16 @@
 (function() {
-  function ModalCtrl($uibModalInstance, Room) {
+    function ModalCtrl(Room, $uibModalInstance) {
+        this.cancel = function () {
+            $uibModalInstance.dismiss();
+        };
 
-    this.roomService = Room;
+        this.submit = function () {
+            Room.add(this.newRoom);
+            $uibModalInstance.close();
+        };
+    }
 
-    this.dismiss = function() {
-      $uibModalInstance.dismiss('cancel');
-    };
-
-    this.submit = function() {
-      if(this.text) {
-
-        this.roomService.addRoom(this.text);
-        this.text = '';
-        $uibModalInstance.close();
-      }
-
-    };
-  }
-
-  angular
-    .module('blocChatapp')
-    .controller('ModalCtrl', ['$uibModalInstance','Room', ModalCtrl]);
+    angular
+        .module('blocChatapp')
+        .controller('ModalCtrl', ['Room', '$uibModalInstance', ModalCtrl]);
 })();

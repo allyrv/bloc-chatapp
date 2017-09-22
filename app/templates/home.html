@@ -1,13 +1,24 @@
 <body>
-  <div class = "left">
-    <section>
-      <h1 class="title">Bloc Chat</h1>
-      <span class="new-room-button" type="button" ng-click="home.addRoom()">New Room</span>
-    </section>
-    <ul class="nav">
-      <li class="room-name" ng-repeat="x in home.roomObject.all">
-         <h4>{{x.name}}</h4>
-      </li>
-    </ul>
+<section ng-controller="HomeCtrl as home">
+    <div class = "rooms">
+      <header>
+        <h1 class = "header">Bloc Chat</h1>
+      </header>
+        <!-- Add new rooms -->
+        <span class ="new-room-button" type = "button" ng-click = "home.addRoom()"> New Room </span>
+    <div class = "room-names">
+        <!-- Displaying rooms in template using ng-repeat -->
+        <div  ng-click = "home.setCurrentRoom(room)" ng-repeat = "room in home.rooms track by $index"> {{room.name}} </div>
+    </div>
   </div>
+
+    <div class="chatroom">
+      <h2 class="current-room"> {{home.currentRoom.name}} </h2>
+      <div class = "messages" ng-repeat="message in home.messages">
+          <div class="username"> {{message.username}}: </div>
+          <div class="user-message"> {{message.content}} </div>
+          <div class="timestamp"> [{{message.sentAt}}] </div>
+        </div>
+  </div>
+</section>
 </body>
