@@ -1,24 +1,26 @@
 <body>
-<section ng-controller="HomeCtrl as home">
-    <div class = "rooms">
+  <section ng-controller="HomeCtrl as home">
+    <section class = "rooms">
       <header>
         <h1 class = "header">Bloc Chat</h1>
       </header>
-        <!-- Add new rooms -->
         <span class ="new-room-button" type = "button" ng-click = "home.addRoom()"> New Room </span>
     <div class = "room-names">
-        <!-- Displaying rooms in template using ng-repeat -->
         <div  ng-click = "home.setCurrentRoom(room)" ng-repeat = "room in home.rooms track by $index"> {{room.name}} </div>
     </div>
-  </div>
-
-    <div class="chatroom">
-      <h2 class="current-room"> {{home.currentRoom.name}} </h2>
+  </section>
+  <section class="chatroom">
+      <h3 class="current-room"> {{home.currentRoom.name}} </h3>
       <div class = "messages" ng-repeat="message in home.messages">
-          <div class="username"> {{message.username}}: </div>
+          <div class="username"> {{message.username}} </div>
+          <div class="timestamp"> {{message.sentAt}} </div>
           <div class="user-message"> {{message.content}} </div>
-          <div class="timestamp"> [{{message.sentAt}}] </div>
-        </div>
-  </div>
-</section>
+      </div>
+    <div class="new-message">
+      <form class = "message-field" ng-submit="home.sendMessage()">
+        <input type="text" class="message-input" placeholder="Message..." ng-model="home.message">
+        <input type="submit" class="button-sendmessage" value="Send">
+      </form>
+    </div>
+  </section>
 </body>
