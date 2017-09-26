@@ -4,10 +4,6 @@ body {
     width: 100%;
 }
 
-.ng-scope {
-  height: 100%
-}
-
 .new-room-button {
     background-color: white;
     color: black;

@@ -15,13 +15,18 @@
 
       this.setCurrentRoom = function (room) {
           this.currentRoom = room;
-          this.messages = Message.getByRoomId(this.currentRoom.$id);
           this.currentRoomId = room.$id
+          this.messages = Message.getByRoomId(this.currentRoom.$id);
+          console.log(this.messages);
       }
 
       this.sendMessage = function() {
-            Message.send(this.message, this.currentRoomId, this.currentUser, this.currentTime);
-            this.message = "";
+        console.log(this.message);
+        console.log(this.currentRoomId);
+        console.log(this.currentUser);
+        console.log(this.currentTime);
+        Message.send(this.message, this.currentRoomId, this.currentUser, this.currentTime);
+        this.message = "";
       }
 
     }
