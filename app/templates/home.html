@@ -4,18 +4,20 @@
       <header>
         <h1 class = "header">Bloc Chat</h1>
       </header>
-        <span class ="new-room-button" type = "button" ng-click = "home.addRoom()"> New Room </span>
+        <span class ="new-room-button" type = "button" ng-click = "home.addRoom()"> + New Room </span>
     <div class = "room-names">
-        <div  ng-click = "home.setCurrentRoom(room)" ng-repeat = "room in home.rooms track by $index"> {{room.name}} </div>
+        <div class = "indiv-room" ng-click = "home.setCurrentRoom(room)" ng-repeat = "room in home.rooms track by $index"> {{room.name}} </div>
     </div>
   </section>
   <section class="chatroom">
       <h3 class="current-room"> {{home.currentRoom.name}} </h3>
-      <div class = "messages" ng-repeat="message in home.messages">
-          <div class="username"> {{message.username}} </div>
-          <div class="timestamp"> {{message.sentAt}} </div>
-          <div class="user-message"> {{message.content}} </div>
-      </div>
+      <table class = "messages">
+        <tr ng-repeat = "message in home.messages">
+          <td class="username"> {{message.username}} </td>
+          <td class="timestamp"> {{message.sentAt}} </td>
+          <td class="user-message"> {{message.content}} </td>
+        </tr>
+      </table>
     <div class="new-message">
       <form class = "message-field" ng-submit="home.sendMessage()">
         <input type="text" class="message-input" placeholder="Message..." ng-model="home.message">
