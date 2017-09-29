@@ -1,21 +1,14 @@
-/*body {
-    font-size: 100%;
-    height: 100%;
-    width: 100%;
-}
-*/
-
 .new-room-button {
-    background-color: white;
-    color: #F14D7B;
-    border: 1px solid darkgrey;
-    border-radius: 8px;
-    padding: 2% 10% 2% 10%;
-    font-size: 16px;
-    font-weight: 500;
-    float: left;
-    margin-left: 10%;
-    margin-right: 35%;
+  background-color: white;
+  color: #F14D7B;
+  border: none;
+  border-radius: 6px;
+  padding: 2% 10% 2% 10%;
+  font-size: 16px;
+  font-weight: 600;
+  float: left;
+  margin-left: 10%;
+  margin-right: 35%;
 }
 
 .new-room-button:hover {
@@ -41,12 +34,12 @@
 }
 
 .room-names {
-  color: #D0D0D0;
+  color: #95a5a6;
   font-weight: 400;
+  font-size: 16px;
   float: left;
   margin: 10%;
   width: 100%;
-
 }
 
 .chatroom {
@@ -57,15 +50,15 @@
   height: 100%;
   background-color: white;
   overflow: scroll;
-  font: Helvetica;
+  font-family: 'Roboto', sans-serif;
 }
 
 .indiv-room {
   padding-bottom: 15px;
 }
 
-.indiv-names:hover {
-  cursor: auto;
+.indiv-room:hover {
+  cursor: pointer;
 }
 
 .current-room {
@@ -76,6 +69,7 @@
   width: 100%;
   margin-top: 0px;
   z-index: 1;
+  font-weight: bold;
 }
 
 tbody tr:nth-child(odd) {
@@ -87,30 +81,39 @@ tbody tr {
   width: 100%;
 }
 
+tr td {
+  display: block;
+}
+
 .messages {
-  font: Helvetica;
+  font-family: 'Roboto', sans-serif;
   color: #2c3e50;
   padding-left: 10px;
   width: 80%;
   margin-top: 80px;
+  margin-bottom: 8%;
 }
 
 .messages .username {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
   text-align: left;
+  display: inline-block;
 }
 
-.messages .timestamp {
+#timestamp {
   font-style: italic;
   font-size: 12px;
   color: #7f8c8d;
 }
 
 .messages .user-message {
-  padding-left: 2px;
+  padding-left: 20px;
+  padding-top: 2px;
   text-align: left;
+  font-size: 16px;
 }
 
 .new-message {
@@ -120,21 +123,22 @@ tbody tr {
   margin-left: 10px;
   bottom: -10px;
   z-index: 1;
-  font: Helvetica;
+  font-family: 'Roboto', sans-serif;
   background-color: white;
 }
 
 input.message-input:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
 
 .message-input {
   width: 70%;
   height: 40px;
-  font: Helvetica;
-  border: 1px solid grey;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid lightgrey;
   border-radius: 25px;
   padding-left: 2%;
+  box-shadow: 0px 3px 1px lightgrey;
 }
 
 .button-sendmessage {
@@ -146,5 +150,6 @@ input.message-input:focus {
   margin-left: 2%;
   height: 40px;
   width: 70px;
-  font: Helvetica;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }

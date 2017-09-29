@@ -17,12 +17,18 @@
           this.currentRoom = room;
           this.currentRoomId = room.$id
           this.messages = Message.getByRoomId(this.currentRoom.$id);
+          console.log(this.messages);
       }
 
       this.sendMessage = function() {
+        console.log(this.message);
+        console.log(this.currentRoomId);
+        console.log(this.currentUser);
+        console.log(this.currentTime);
         Message.send(this.message, this.currentRoomId, this.currentUser, this.currentTime);
         this.message = "";
       }
+
     }
 
   angular

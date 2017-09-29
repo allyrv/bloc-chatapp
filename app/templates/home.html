@@ -2,7 +2,9 @@
   <section ng-controller="HomeCtrl as home">
     <section class = "rooms">
       <header>
-        <h1 class = "header">Bloc Chat</h1>
+        <h1 class = "header">
+        <img src = "assets/bloc_logo.png" style = "width:175px">
+        </h1>
       </header>
         <span class ="new-room-button" type = "button" ng-click = "home.addRoom()"> + New Room </span>
     <div class = "room-names">
@@ -13,9 +15,9 @@
       <h3 class="current-room"> {{home.currentRoom.name}} </h3>
       <table class = "messages">
         <tr ng-repeat = "message in home.messages">
-          <td class="username"> {{message.username}} </td>
-          <td class="timestamp"> {{message.sentAt}} </td>
-          <td class="user-message"> {{message.content}} </td>
+          <td class= "username"> {{message.username}} </td>
+          <td id = "timestamp" class = "username"> {{message.sentAt}} </td>
+          <td class= "user-message"> {{message.content}} </td>
         </tr>
       </table>
     <div class="new-message">
