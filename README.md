@@ -159,18 +159,18 @@ Before testing the authentication,users have to be manually created in the fireb
 --------------------
 Shows a list of chatrooms available for the user.
 
-![list chatrooms](/app/assets/viewchatroom messages.png "list chatrooms")
+![list chatrooms](/app/assets/viewchatroommessages.png)
 
 #### Create New Chatroom
 --------------------
 User creates a new chatroom and sends a message to the chatroom
 
-![send messages](/app/assets/createnewchatroom.png "send messages")
+![send messages](/app/assets/createnewroom.png)
 
 #### Show Messages
 --------------------
 
-![show messages](/app/assets/newchatroomcreated.png "show messages")
+![show messages](/app/assets/newroomcreated.png)
 
 
 ## Bloc Frontend Project Starter
