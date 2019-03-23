@@ -170,7 +170,7 @@ User creates a new chatroom and sends a message to the chatroom
 #### Show Messages
 --------------------
 
-![show messages](/app/assets/newroomwithmessages.png)
+![show messages](/app/assets/newroomwithmessage.png)
 
 
 ## Bloc Frontend Project Starter
